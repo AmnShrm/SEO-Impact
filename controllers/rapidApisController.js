@@ -19,72 +19,72 @@ const leftPart = async (req, res, url) => {
 
 exports.redirectChecker = async (req, res) => {
   const targetUrl = req.params.url;
-  const url = `https://seo-api2.p.rapidapi.com/redirect-checker?url=${targetUrl}`;
+  const url = `${process.env.REDIRECTCHECKER}${targetUrl}`;
   leftPart(req, res, url);
 };
 
 exports.wordpressThemeDetector = async (req, res) => {
   const targetUrl = req.params.url;
-  const url = `https://seo-api2.p.rapidapi.com/wordpress-theme-detector?url=${targetUrl}`;
+  const url = `${process.env.WORDPRESSTHEMEDETECTOR}${targetUrl}`;
   leftPart(req, res, url);
 };
 
 exports.pageSizeChecker = async (req, res) => {
   const targetUrl = req.params.url;
-  const url = `https://seo-api2.p.rapidapi.com/page-size-checker?url=${targetUrl}`;
+  const url = `${process.env.PAGESIZECHECKER}${targetUrl}`;
   leftPart(req, res, url);
 };
 
 exports.getHttpHeaders = async (req, res) => {
   const targetUrl = req.params.url;
-  const url = `https://seo-api2.p.rapidapi.com/get-http-headers?url=${targetUrl}`;
+  const url = `${process.env.GETHTTPHEADERS}${targetUrl}`;
   leftPart(req, res, url);
 };
 
 exports.openGraphChecker = async (req, res) => {
   const targetUrl = req.params.url;
-  const url = `https://seo-api2.p.rapidapi.com/open-graph-checker?url=${targetUrl}`;
+  const url = `${process.env.OPENGRAPGHCHECKER}${targetUrl}`;
   leftPart(req, res, url);
 };
 
 exports.metaTagsAnalyzer = async (req, res) => {
   const targetUrl = req.params.url;
-  const url = `https://seo-api2.p.rapidapi.com/meta-tags-analyzer?url=${targetUrl}`;
+  const url = `${process.env.METATAGSANALYSER}${targetUrl}`;
   leftPart(req, res, url);
 };
 
 exports.keywordRankChecker = async (req, res) => {
   const targetUrl = req.params.url;
-  const url = `https://seo-api2.p.rapidapi.com/keyword-rank-checker?url=${targetUrl}`;
+  const url = `${process.env.KEYWORDRANKCHECKER}${targetUrl}`;
   leftPart(req, res, url);
 };
 
 exports.keywordDensityChecker = async (req, res) => {
   const targetUrl = req.params.url;
-  const url = `https://seo-api2.p.rapidapi.com/keyword-density-checker?url=${targetUrl}`;
+  const url = `${process.env.KEYWORDDENSITYCHECKER}${targetUrl}`;
   leftPart(req, res, url);
 };
 
 exports.domainLookup = async (req, res) => {
   const targetUrl = req.params.url;
-  const url = `https://seo-api2.p.rapidapi.com/whois-domain-lookup/${targetUrl}`;
+  const url = `${process.env.DOMAINLOOKUP}${targetUrl}`;
   leftPart(req, res, url);
 };
 
 exports.domainToIP = async (req, res) => {
   const targetUrl = req.params.url;
-  const url = `https://seo-api2.p.rapidapi.com/domain-to-ip?url=${targetUrl}`;
+  const url = `${process.env.DOMAINTOIP}${targetUrl}`;
   leftPart(req, res, url);
 };
 
 exports.domainAgeChecker = async (req, res) => {
   const targetUrl = req.params.url;
-  const url = `https://seo-api2.p.rapidapi.com/domain-age-checker/${targetUrl}`;
+  const url = `${process.env.DOMAINAGECHECKER}${targetUrl}`;
   leftPart(req, res, url);
 };
 
 exports.hostingChecker = async (req, res) => {
   const targetUrl = req.params.url;
-  const url = `https://seo-api2.p.rapidapi.com/hosting-checker?url=${targetUrl}`;
+  const url = `${process.env.HOSTINGCHECKER}${targetUrl}`;
   leftPart(req, res, url);
 };
