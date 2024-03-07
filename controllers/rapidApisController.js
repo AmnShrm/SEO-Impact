@@ -3,7 +3,7 @@ const leftPart = async (req, res, url) => {
     method: "GET",
     headers: {
       "X-RapidAPI-Key": process.env.RAPIDAPI_KEY,
-      "X-RapidAPI-Host": process.env.RAPIDAPI_HOST,
+      "X-RapidAPI-Host": process.env.RAPIDAPI_HOST_1,
     },
   };
 
@@ -55,7 +55,8 @@ exports.metaTagsAnalyzer = async (req, res) => {
 
 exports.keywordRankChecker = async (req, res) => {
   const targetUrl = req.params.url;
-  const url = `${process.env.KEYWORDRANKCHECKER}${targetUrl}`;
+  const keyword = req.body.keyword;
+  const url = `${process.env.KEYWORDRANKCHECKER}${targetUrl}&keyword=${keyword}`;
   leftPart(req, res, url);
 };
 
@@ -88,3 +89,4 @@ exports.hostingChecker = async (req, res) => {
   const url = `${process.env.HOSTINGCHECKER}${targetUrl}`;
   leftPart(req, res, url);
 };
+
