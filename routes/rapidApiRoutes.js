@@ -24,4 +24,6 @@ router.get("/domainToIP/:url", RapidApiController.domainToIP);
 router.get("/domainAgeChecker/:url", RapidApiController.domainAgeChecker);
 router.get("/hostingChecker/:url", RapidApiController.hostingChecker);
 
+router.get("/seoReport/:url", RapidApiController.seoReport);
+
 module.exports = router;

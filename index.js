@@ -13,12 +13,14 @@ dbConnect();
 
 // Routes
 const userRoute = require("./routes/UserRoute");
+const metadataRoute = require("./routes/metadataRoute");
 
 // RapidApi Routes
 const rapidApiRoutes = require("./routes/rapidApiRoutes");
 
 // Mount routes
 app.use("/api/v1", userRoute);
+app.use("/api/v1", metadataRoute);
 
 // Mount RapidApi
 app.use("/api/v1", rapidApiRoutes);

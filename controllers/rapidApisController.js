@@ -17,6 +17,25 @@ const leftPart = async (req, res, url) => {
   }
 };
 
+const leftPart_SEOREPORT = async (req, res, url) => {
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": process.env.RAPIDAPI_KEY,
+      "X-RapidAPI-Host": process.env.RAPIDAPI_HOST_2,
+    },
+  };
+
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    res.send(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+};
+
 exports.redirectChecker = async (req, res) => {
   const targetUrl = req.params.url;
   const url = `${process.env.REDIRECTCHECKER}${targetUrl}`;
@@ -90,3 +109,8 @@ exports.hostingChecker = async (req, res) => {
   leftPart(req, res, url);
 };
 
+exports.seoReport = async (req, res) => {
+  const targetUrl = req.params.url;
+  const url = `${process.env.SEOREPORT}${targetUrl}`;
+  leftPart_SEOREPORT(req, res, url);
+};
